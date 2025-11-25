@@ -540,7 +540,7 @@ jobs:
     - name: Install ProcDump
       if: runner.os == 'Windows'
       shell: pwsh
-      run: choco install procdump -y; Add-Content $env:GITHUB_PATH "$env:ProgramData\chocolatey\bin\"
+      run: winget install Microsoft.Sysinternals.Suite --disable-interactivity --accept-source-agreements
     - name: Install Visual C++ Runtime
       if: runner.os == 'Windows'
       shell: pwsh
