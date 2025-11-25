@@ -189,6 +189,8 @@ jobs:
           /p:CreateHardLinksForCopyLocalIfPossible=true \
           /p:CreateHardLinksForPublishFilesIfPossible=true \
           /p:ContinuousIntegrationBuild=true \
+          /p:ClangToolName="clang-19" \
+          /p:LlvmArToolExe="llvm-ar-19" \
           IKVM.dist.msbuildproj
     - name: Upload MSBuild Log
       if: ${{ always() }}
