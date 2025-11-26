@@ -669,9 +669,9 @@ jobs:
                 $argl += @("-a", "x86")
             }
 
-            if ($sys -ne "linux-arm64") {
-                $argl += @("--blame-crash")
-            }
+            # if ($sys -ne "linux-arm64") {
+            #     $argl += @("--blame-crash")
+            # }
             
             $runsettings = $(gi .\tests\$tst\$tfm\*.runsettings)
             if ($runsettings) {
