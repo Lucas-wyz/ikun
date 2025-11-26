@@ -543,10 +543,10 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         wget_release_id: latest
-    - name: Install ProcDump
-      if: runner.os == 'Windows'
-      shell: pwsh
-      run: winget install Microsoft.Sysinternals.Suite --disable-interactivity --accept-source-agreements
+    # - name: Install ProcDump
+    #   if: runner.os == 'Windows'
+    #   shell: pwsh
+    #   run: choco install procdump -y; Add-Content $env:GITHUB_PATH "$env:ProgramData\chocolatey\bin\"
     - name: Install Visual C++ Runtime
       if: runner.os == 'Windows'
       shell: pwsh
@@ -655,10 +655,10 @@ jobs:
         if ($tests) {
             $argl = @(
                 "-f", $tfm,
-                "--blame",
-                "--blame-hang",
-                "--blame-hang-timeout", "120m",
-                "--blame-hang-dump-type", "full",
+                # "--blame",
+                # "--blame-hang",
+                # "--blame-hang-timeout", "120m",
+                # "--blame-hang-dump-type", "full",
                 "-v:diag",
                 "--results-directory", "TestResults",
                 "--logger:console;verbosity=detailed",
