@@ -545,6 +545,11 @@ jobs:
       if: runner.os == 'Windows'
       shell: pwsh
       run: choco install vcredist-all -y
+    - name: Install Mono
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update && \
+        sudo apt-get install -y mono-runtime mono-devel
     - name: Start XVFB (Linux)
       if: runner.os == 'Linux'
       run: /usr/bin/Xvfb :99 & disown; echo DISPLAY=:99 >> $GITHUB_ENV
