@@ -1421,6 +1421,7 @@ java/net/ServerSocket/ThreadStop.java                                           
 java/net/Socket/OldSocketImpl.sh                                                                                        generic-all
 java/net/Socket/asyncClose/Race.java                                                                                    generic-all
 java/net/Socket/B8312065.sh                                                                                             generic-all
+java/net/Socket/B8312065.java                                                                                           generic-all
 java/net/Socks/SocksV4Test.java                                                                                         linux-all
 java/net/URLClassLoader/B5077773.sh                                                                                     generic-all
 java/net/URLClassLoader/closetest/CloseTest.java                                                                        generic-all
