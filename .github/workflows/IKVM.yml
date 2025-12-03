@@ -466,6 +466,16 @@ jobs:
         foreach ($_ in $sys) {
           $include += @(
             @{
+              "run" = "IKVM.CoreLib.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.MSBuild.Tasks.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
               "run" = "IKVM.Tools.Exporter.Tests"
               "tfm" = "net10.0"
               "sys" = $_
@@ -477,6 +487,11 @@ jobs:
             },
             @{
               "run" = "IKVM.Tools.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.JTReg.TestAdapter.Tests"
               "tfm" = "net10.0"
               "sys" = $_
             }
