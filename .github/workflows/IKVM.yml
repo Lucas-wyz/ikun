@@ -471,6 +471,11 @@ jobs:
               "sys" = $_
             },
             @{
+              "run" = "IKVM.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
               "run" = "IKVM.MSBuild.Tasks.Tests"
               "tfm" = "net10.0"
               "sys" = $_
