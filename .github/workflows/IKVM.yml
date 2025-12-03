@@ -491,6 +491,27 @@ jobs:
             "sys" = "osx-arm64"
           }
         )
+        
+        # add specific net10 tests
+        foreach ($_ in $sys) {
+          $include += @(
+            @{
+              "run" = "IKVM.Tools.Exporter.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.Tools.Importer.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.Tools.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            }
+          )
+        }
 
         "matrix=" + (@{
           sys = $sys
