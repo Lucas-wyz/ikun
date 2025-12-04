@@ -44,7 +44,8 @@ namespace IKVM.Tests.Util
         {
             if (targetFrameworkIdentifier == ".NETFramework")
                 return "mscorlib";
-            if (targetFrameworkIdentifier == ".NETCore")
+
+            if (targetFrameworkIdentifier == ".NET")
                 return "System.Runtime";
 
             throw new InvalidOperationException();
