@@ -33,7 +33,7 @@ namespace IKVM.Tests.Java.ikvm.runtime
 #if NET10_0
             var ikvmTool = "net10.0";
             var ikvmLibs = Path.Combine(TESTBASE, "lib", "net8.0");
-            var libPaths = DotNetSdkUtil.GetPathToReferenceAssemblies("net8.0", ".NET", "8.0");
+            var libPaths = DotNetSdkUtil.GetPathToReferenceAssemblies("net10.0", ".NET", "10.0");
 #endif
 #if NET8_0
             var ikvmTool = "net10.0";
