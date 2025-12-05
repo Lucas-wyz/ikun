@@ -413,9 +413,9 @@ jobs:
           "IKVM.Tools.Importer.Tests",
           "IKVM.Tools.Tests",
           "IKVM.MSBuild.Tasks.Tests",
-          "IKVM.MSBuild.Tests",
-          "IKVM.NET.Sdk.Tests",
-          "IKVM.JTReg.TestAdapter.Tests")
+          "IKVM.JTReg.TestAdapter.Tests"
+        )
+
         foreach ($_ in (0..15)) {
           $run += @("IKVM.OpenJDK.Tests?TestPartition=$_")
         }
@@ -436,46 +436,6 @@ jobs:
           @{
             "tfm" = "net472"
             "sys" = "osx-arm64"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "tfm" = "net472"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "tfm" = "net6.0"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "tfm" = "net7.0"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "sys" = "linux-x64"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "sys" = "linux-arm64"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "sys" = "osx-x64"
-          },
-          @{
-            "run" = "IKVM.MSBuild.Tests"
-            "sys" = "osx-arm64"
-          },
-          @{
-            "run" = "IKVM.NET.Sdk.Tests"
-            "tfm" = "net472"
-          },
-          @{
-            "run" = "IKVM.NET.Sdk.Tests"
-            "tfm" = "net6.0"
-          },
-          @{
-            "run" = "IKVM.NET.Sdk.Tests"
-            "tfm" = "net7.0"
           }
         )
 
@@ -489,12 +449,37 @@ jobs:
             "run" = "IKVM.Tests"
             "tfm" = "net8.0"
             "sys" = "osx-arm64"
+          },
+          @{
+            "run" = "IKVM.MSBuild.Tests"
+            "tfm" = "net10.0"
+            "sys" = "win-x64"
+          },
+          @{
+            "run" = "IKVM.NET.Sdk.Tests"
+            "tfm" = "net10.0"
+            "sys" = "win-x64"
           }
         )
         
         # add specific net10 tests
         foreach ($_ in $sys) {
           $include += @(
+            @{
+              "run" = "IKVM.CoreLib.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.MSBuild.Tasks.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
             @{
               "run" = "IKVM.Tools.Exporter.Tests"
               "tfm" = "net10.0"
@@ -507,6 +492,11 @@ jobs:
             },
             @{
               "run" = "IKVM.Tools.Tests"
+              "tfm" = "net10.0"
+              "sys" = $_
+            },
+            @{
+              "run" = "IKVM.JTReg.TestAdapter.Tests"
               "tfm" = "net10.0"
               "sys" = $_
             }
