@@ -145,7 +145,7 @@ jobs:
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v4
       with:
-        versionSpec: 6.x
+        versionSpec: 5.x
     - name: Execute GitVersion
       uses: gittools/actions/gitversion/execute@v4
     - name: Download JTReg Build
@@ -746,7 +746,7 @@ jobs:
     - name: Install GitVersion
       uses: gittools/actions/gitversion/setup@v4
       with:
-        versionSpec: 6.x
+        versionSpec: 5.x
     - name: Execute GitVersion
       uses: gittools/actions/gitversion/execute@v4
     - name: Download NuGet Packages
